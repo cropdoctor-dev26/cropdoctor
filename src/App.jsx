@@ -48,7 +48,7 @@ function App() {
  
 const getHistory = async () => {
   try {
-    const response = await fetch("http://127.0.0.1:8000/history");
+    const response = await fetch("https://YOUR-RENDER-SERVICE.onrender.com/history");
     const data = await response.json();
 
     setHistory(Array.isArray(data) ? data : data.history || []);
@@ -67,8 +67,8 @@ const deleteHistory = async () => {
   if (!confirmed) return;
 
   try {
-    const response = await fetch(
-      "http://127.0.0.1:8000/history",
+    const response = await  fetch(
+      "https://YOUR-RENDER-SERVICE.onrender.com/history",
       { method: "DELETE" }
     );
 
@@ -94,7 +94,7 @@ const deleteHistory = async () => {
 
   try {
     const response = await fetch(
-      `http://127.0.0.1:8000/history/${id}`,
+       `https://YOUR-RENDER-SERVICE.onrender.com/history/${id}`, 
       { method: "DELETE" }
     );
 
@@ -150,8 +150,8 @@ const deleteHistory = async () => {
 
       formData.append("file", selectedFile);
 
-      const response = await fetch(
-        "http://127.0.0.1:8000/analyze",
+      const response = await fetch (
+         "https://YOUR-RENDER-SERVICE.onrender.com/analyze",
         {
           method: "POST",
           body: formData,
