@@ -27,7 +27,7 @@ def predict_image(image):
     confidence = float(predictions[0][predicted_index]) * 100
 
     return predicted_class, confidence
-MODEL_PATH = r"models\wheat_disease_model.keras"
+MODEL_PATH = "training/cropdoctor_model.keras"
 
 model = tf.keras.models.load_model(MODEL_PATH)
 
