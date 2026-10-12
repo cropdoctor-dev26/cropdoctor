@@ -62,10 +62,10 @@ app = FastAPI()
 
 app.add_middleware(
     CORSMiddleware, allow_origins=[
-    "http://localhost:5173",
+    "http://localhost:5173", 
     "http://localhost:4173",
-    "http://localhost:4174",
-    "https://YOUR-ACTUAL-CROPDOCTOR-URL.vercel.app",
+    "http://localhost:4174", 
+    "https://cropdoctor-4jfn0wymd-cropdoctor-team.vercel.app"
 ],
     allow_credentials=True,
     allow_methods=["*"],
