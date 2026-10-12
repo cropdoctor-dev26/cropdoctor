@@ -1,0 +1,1332 @@
+.counter {
+  font-size: 16px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  color: var(--accent);
+  background: var(--accent-bg);
+  border: 2px solid transparent;
+  transition: border-color 0.3s;
+  margin-bottom: 24px;
+
+  &:hover {
+    border-color: var(--accent-border);
+  }
+  &:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+  }
+}
+
+.hero {
+  position: relative;
+
+  .base,
+  .framework,
+  .vite {
+    inset-inline: 0;
+    margin: 0 auto;
+  }
+
+  .base {
+    width: 170px;
+    position: relative;
+    z-index: 0;
+  }
+
+  .framework,
+  .vite {
+    position: absolute;
+  }
+
+  .framework {
+    z-index: 1;
+    top: 34px;
+    height: 28px;
+    transform: perspective(2000px) rotateZ(300deg) rotateX(44deg) rotateY(39deg)
+      scale(1.4);
+  }
+
+  .vite {
+    z-index: 0;
+    top: 107px;
+    height: 26px;
+    width: auto;
+    transform: perspective(2000px) rotateZ(300deg) rotateX(40deg) rotateY(39deg)
+      scale(0.8);
+  }
+}
+
+#center {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  place-content: center;
+  place-items: center;
+  flex-grow: 1;
+
+  @media (max-width: 1024px) {
+    padding: 32px 20px 24px;
+    gap: 18px;
+  }
+}
+
+#next-steps {
+  display: flex;
+  border-top: 1px solid var(--border);
+  text-align: left;
+
+  & > div {
+    flex: 1 1 0;
+    padding: 32px;
+    @media (max-width: 1024px) {
+      padding: 24px 20px;
+    }
+  }
+
+  .icon {
+    margin-bottom: 16px;
+    width: 22px;
+    height: 22px;
+  }
+
+  @media (max-width: 1024px) {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+#docs {
+  border-right: 1px solid var(--border);
+
+  @media (max-width: 1024px) {
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+  }
+}
+
+#next-steps ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: 8px;
+  margin: 32px 0 0;
+
+  .logo {
+    height: 18px;
+  }
+
+  a {
+    color: var(--text-h);
+    font-size: 16px;
+    border-radius: 6px;
+    background: var(--social-bg);
+    display: flex;
+    padding: 6px 12px;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    transition: box-shadow 0.3s;
+
+    &:hover {
+      box-shadow: var(--shadow);
+    }
+    .button-icon {
+      height: 18px;
+      width: 18px;
+    }
+  }
+
+  @media (max-width: 1024px) {
+    margin-top: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    li {
+      flex: 1 1 calc(50% - 8px);
+    }
+
+    a {
+      width: 100%;
+      justify-content: center;
+      box-sizing: border-box;
+    }
+  }
+}
+
+#spacer {
+  height: 88px;
+  border-top: 1px solid var(--border);
+  @media (max-width: 1024px) {
+    height: 48px;
+  }
+}
+
+.ticks {
+  position: relative;
+  width: 100%;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    top: -4.5px;
+    border: 5px solid transparent;
+  }
+
+  &::before {
+    left: 0;
+    border-left-color: var(--border);
+  }
+  &::after {
+    right: 0;
+    border-right-color: var(--border);
+  }
+}
+
+/* CropDoctor - Crops Page */
+
+.crops-page {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 32px;
+  box-sizing: border-box;
+  color: #244b36;
+  background: #f4faf3;
+  border-radius: 24px;
+}
+
+.crops-header {
+  margin-bottom: 28px;
+}
+
+.crops-tag {
+  color: #528461;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.crops-header h1 {
+  margin: 8px 0;
+  font-size: clamp(32px, 4vw, 44px);
+  color: #245c3b;
+}
+
+.crops-subtitle {
+  color: #6b8170;
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+.crops-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 32px;
+  margin-bottom: 28px;
+  border-radius: 22px;
+  background: linear-gradient(120deg, #d8efda, #eaf7e8);
+  border: 1px solid #cce5ce;
+}
+
+.crops-banner h2 {
+  font-size: clamp(23px, 3vw, 32px);
+  margin: 0 0 12px;
+  color: #285d3c;
+}
+
+.crops-banner p {
+  max-width: 600px;
+  line-height: 1.8;
+  color: #4e7057;
+}
+
+.crops-banner-icon {
+  font-size: 64px;
+  flex-shrink: 0;
+}
+
+.crops-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+  margin-bottom: 28px;
+}
+
+.crop-card {
+  padding: 26px;
+  min-width: 0;
+  background: #ffffff;
+  border: 1px solid #dcebdd;
+  border-radius: 20px;
+  box-shadow: 0 5px 18px rgba(45, 91, 56, 0.06);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.crop-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 24px rgba(45, 91, 56, 0.12);
+}
+
+.crop-card-icon {
+  width: 58px;
+  height: 58px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #e7f5e6;
+  border-radius: 16px;
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+
+.crop-card-label {
+  color: #6b9473;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.2px;
+}
+
+.crop-card h2 {
+  font-size: 22px;
+  color: #2b6240;
+  margin: 10px 0;
+}
+
+.crop-card > p:last-child {
+  color: #718173;
+  line-height: 1.8;
+  font-size: 15px;
+}
+
+.crops-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 24px;
+  margin-bottom: 28px;
+  border-radius: 18px;
+  background: #e9f5e8;
+}
+
+.crops-note > span {
+  font-size: 30px;
+}
+
+.crops-note h3 {
+  margin: 0 0 8px;
+  color: #326a43;
+  font-size: 19px;
+}
+
+.crops-note p {
+  margin: 0;
+  color: #617966;
+  line-height: 1.8;
+}
+
+.crops-back-button {
+  padding: 13px 24px;
+  border: none;
+  border-radius: 12px;
+  background: #34784b;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.crops-back-button:hover {
+  background: #245d38;
+}
+
+@media (max-width: 800px) {
+  .crops-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .crops-page {
+    padding: 20px;
+  }
+
+  .crops-banner {
+    padding: 22px;
+  }
+
+  .crops-banner-icon {
+    font-size: 42px;
+  }
+}
+
+@media (max-width: 450px) {
+  .crops-banner-icon {
+    display: none;
+  }
+}
+
+/* CropDoctor - Diseases Page */
+
+.diseases-page {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 32px;
+  box-sizing: border-box;
+  border-radius: 24px;
+  background: #f4faf3;
+  color: #244b36;
+}
+
+.diseases-header {
+  margin-bottom: 28px;
+}
+
+.diseases-tag {
+  color: #528461;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.diseases-header h1 {
+  margin: 8px 0;
+  color: #245c3b;
+  font-size: clamp(32px, 4vw, 44px);
+}
+
+.diseases-header > p:last-child {
+  color: #6b8170;
+  font-size: 17px;
+  line-height: 1.8;
+}
+
+.diseases-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 32px;
+  margin-bottom: 28px;
+  border: 1px solid #cce5ce;
+  border-radius: 22px;
+  background: linear-gradient(120deg, #d8efda, #eaf7e8);
+}
+
+.diseases-banner h2 {
+  margin: 0 0 12px;
+  color: #285d3c;
+  font-size: clamp(23px, 3vw, 32px);
+}
+
+.diseases-banner p {
+  max-width: 650px;
+  color: #4e7057;
+  line-height: 1.8;
+}
+
+.diseases-banner > span {
+  flex-shrink: 0;
+  font-size: 64px;
+}
+
+.diseases-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+  margin-bottom: 28px;
+}
+
+.disease-card {
+  min-width: 0;
+  padding: 26px;
+  border: 1px solid #dcebdd;
+  border-radius: 20px;
+  background: #ffffff;
+  box-shadow: 0 5px 18px rgba(45, 91, 56, 0.06);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.disease-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 24px rgba(45, 91, 56, 0.12);
+}
+
+.disease-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 58px;
+  height: 58px;
+  margin-bottom: 20px;
+  border-radius: 16px;
+  background: #e7f5e6;
+  font-size: 30px;
+}
+
+.disease-label {
+  color: #6b9473;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.2px;
+}
+
+.disease-card h2 {
+  margin: 10px 0;
+  color: #2b6240;
+  font-size: 24px;
+}
+
+.disease-card > p {
+  color: #718173;
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.disease-tip {
+  margin-top: 20px;
+  padding: 15px;
+  border-radius: 12px;
+  background: #eaf6e8;
+  color: #466d4e;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.diseases-reminder {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 24px;
+  margin-bottom: 28px;
+  border-radius: 18px;
+  background: #e9f5e8;
+}
+
+.diseases-reminder > span {
+  font-size: 30px;
+}
+
+.diseases-reminder h3 {
+  margin: 0 0 8px;
+  color: #326a43;
+  font-size: 19px;
+}
+
+.diseases-reminder p {
+  margin: 0;
+  color: #617966;
+  line-height: 1.8;
+}
+
+.diseases-back-button {
+  padding: 13px 24px;
+  border: none;
+  border-radius: 12px;
+  background: #34784b;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.diseases-back-button:hover {
+  background: #245d38;
+}
+
+@media (max-width: 700px) {
+  .diseases-page {
+    padding: 20px;
+  }
+
+  .diseases-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .diseases-banner {
+    padding: 22px;
+  }
+
+  .diseases-banner > span {
+    font-size: 42px;
+  }
+}
+
+@media (max-width: 450px) {
+  .diseases-banner > span {
+    display: none;
+  }
+}
+
+/* CropDoctor - Weather Page */
+
+.weather-page {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 32px;
+  box-sizing: border-box;
+  border-radius: 24px;
+  background: #f4faf3;
+  color: #244b36;
+}
+
+.weather-header {
+  margin-bottom: 28px;
+}
+
+.weather-tag {
+  color: #528461;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.weather-header h1 {
+  margin: 8px 0;
+  color: #245c3b;
+  font-size: clamp(32px, 4vw, 44px);
+}
+
+.weather-header > p:last-child {
+  color: #6b8170;
+  font-size: 17px;
+  line-height: 1.8;
+}
+
+.weather-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 32px;
+  margin-bottom: 28px;
+  border: 1px solid #cce5ce;
+  border-radius: 22px;
+  background: linear-gradient(120deg, #d8efda, #eaf7e8);
+}
+
+.weather-banner h2 {
+  margin: 0 0 12px;
+  color: #285d3c;
+  font-size: clamp(23px, 3vw, 32px);
+}
+
+.weather-banner p {
+  max-width: 650px;
+  color: #4e7057;
+  line-height: 1.8;
+}
+
+.weather-banner > span {
+  flex-shrink: 0;
+  font-size: 64px;
+}
+
+.weather-panel {
+  padding: 28px;
+  margin-bottom: 28px;
+  border: 1px solid #dcebdd;
+  border-radius: 22px;
+  background: #ffffff;
+  box-shadow: 0 5px 18px rgba(45, 91, 56, 0.06);
+}
+
+.weather-panel-heading {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.weather-sun-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  flex-shrink: 0;
+  border-radius: 16px;
+  background: #e7f5e6;
+  font-size: 32px;
+}
+
+.weather-panel-heading h2 {
+  margin: 0 0 6px;
+  color: #2b6240;
+  font-size: 25px;
+}
+
+.weather-panel-heading p {
+  margin: 0;
+  color: #718173;
+  line-height: 1.6;
+}
+
+.weather-stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  margin-bottom: 20px;
+}
+
+.weather-stat-card {
+  min-width: 0;
+  padding: 22px 16px;
+  border: 1px solid #dcebdd;
+  border-radius: 18px;
+  background: #f5faf3;
+  text-align: center;
+}
+
+.weather-stat-card > span {
+  font-size: 34px;
+}
+
+.weather-stat-card > p {
+  color: #6b9473;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.weather-stat-card h3 {
+  margin: 10px 0 0;
+  color: #285d3c;
+  font-size: clamp(20px, 2.5vw, 28px);
+  overflow-wrap: anywhere;
+}
+
+.weather-data-note {
+  color: #718173;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.weather-empty {
+  padding: 28px 16px;
+  border-radius: 18px;
+  background: #f5faf3;
+  text-align: center;
+}
+
+.weather-empty > span {
+  font-size: 48px;
+}
+
+.weather-empty h3 {
+  color: #2b6240;
+  font-size: 22px;
+}
+
+.weather-empty p {
+  color: #718173;
+  line-height: 1.8;
+}
+
+.weather-refresh-button {
+  width: 100%;
+  margin-top: 16px;
+  padding: 16px 22px;
+  border: none;
+  border-radius: 13px;
+  background: #34784b;
+  color: white;
+  font-size: 17px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.weather-refresh-button:hover {
+  background: #245d38;
+}
+
+.weather-tip {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 24px;
+  margin-bottom: 28px;
+  border-radius: 18px;
+  background: #e9f5e8;
+}
+
+.weather-tip > span {
+  font-size: 30px;
+}
+
+.weather-tip h3 {
+  margin: 0 0 8px;
+  color: #326a43;
+  font-size: 19px;
+}
+
+.weather-tip p {
+  margin: 0;
+  color: #617966;
+  line-height: 1.8;
+}
+
+.weather-back-button {
+  padding: 13px 24px;
+  border: none;
+  border-radius: 12px;
+  background: #34784b;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.weather-back-button:hover {
+  background: #245d38;
+}
+
+@media (max-width: 700px) {
+  .weather-page {
+    padding: 20px;
+  }
+
+  .weather-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .weather-banner {
+    padding: 22px;
+  }
+
+  .weather-banner > span {
+    font-size: 42px;
+  }
+
+  .weather-panel {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 450px) {
+  .weather-banner > span {
+    display: none;
+  }
+}
+
+/* CropDoctor - Farming Tips Page */
+
+.tips-page {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 32px;
+  box-sizing: border-box;
+  border-radius: 24px;
+  background: #f4faf3;
+  color: #244b36;
+}
+
+.tips-header {
+  margin-bottom: 28px;
+}
+
+.tips-tag {
+  color: #528461;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.tips-header h1 {
+  margin: 8px 0;
+  color: #245c3b;
+  font-size: clamp(32px, 4vw, 44px);
+}
+
+.tips-header > p:last-child {
+  color: #6b8170;
+  font-size: 17px;
+  line-height: 1.8;
+}
+
+.tips-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 32px;
+  margin-bottom: 28px;
+  border: 1px solid #cce5ce;
+  border-radius: 22px;
+  background: linear-gradient(120deg, #d8efda, #eaf7e8);
+}
+
+.tips-banner h2 {
+  margin: 0 0 12px;
+  color: #285d3c;
+  font-size: clamp(23px, 3vw, 32px);
+}
+
+.tips-banner p {
+  max-width: 650px;
+  color: #4e7057;
+  line-height: 1.8;
+}
+
+.tips-banner > span {
+  flex-shrink: 0;
+  font-size: 64px;
+}
+
+.tips-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+  margin-bottom: 28px;
+}
+
+.tip-card {
+  min-width: 0;
+  padding: 24px;
+  border: 1px solid #dcebdd;
+  border-radius: 20px;
+  background: #ffffff;
+  box-shadow: 0 5px 18px rgba(45, 91, 56, 0.06);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.tip-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 24px rgba(45, 91, 56, 0.12);
+}
+
+.tip-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 58px;
+  height: 58px;
+  margin-bottom: 18px;
+  border-radius: 16px;
+  background: #e7f5e6;
+  font-size: 30px;
+}
+
+.tip-label {
+  color: #6b9473;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.tip-card h2 {
+  margin: 12px 0;
+  color: #2b6240;
+  font-size: 21px;
+}
+
+.tip-card > p {
+  color: #718173;
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.tip-footer {
+  margin-top: 20px;
+  padding: 13px;
+  border-radius: 12px;
+  background: #eaf6e8;
+  color: #466d4e;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.tips-reminder {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 24px;
+  margin-bottom: 28px;
+  border-radius: 18px;
+  background: #e9f5e8;
+}
+
+.tips-reminder > span {
+  font-size: 30px;
+}
+
+.tips-reminder h3 {
+  margin: 0 0 8px;
+  color: #326a43;
+  font-size: 19px;
+}
+
+.tips-reminder p {
+  margin: 0;
+  color: #617966;
+  line-height: 1.8;
+}
+
+.tips-back-button {
+  padding: 13px 24px;
+  border: none;
+  border-radius: 12px;
+  background: #34784b;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.tips-back-button:hover {
+  background: #245d38;
+}
+
+@media (max-width: 900px) {
+  .tips-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .tips-page {
+    padding: 20px;
+  }
+
+  .tips-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .tips-banner {
+    padding: 22px;
+  }
+
+  .tips-banner > span {
+    font-size: 42px;
+  }
+}
+
+@media (max-width: 450px) {
+  .tips-banner > span {
+    display: none;
+  }
+}
+
+/* ===== Diagnosis History Page ===== */
+
+.history-page {
+  max-width: 1100px;
+  width: calc(100% - 40px);
+  margin: 32px auto;
+  padding: 30px;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+  background: #f4faf4;
+  border: 1px solid #e0eee0;
+  border-radius: 24px;
+  color: #294a32;
+}
+
+.history-header {
+  text-align: center;
+  padding: 20px 10px 28px;
+}
+
+.history-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 76px;
+  height: 76px;
+  border-radius: 24px;
+  background: #e0f2df;
+  font-size: 38px;
+}
+
+.history-header h1 {
+  margin: 16px 0 8px;
+  color: #216b3a;
+  font-size: clamp(28px, 4vw, 38px);
+}
+
+.history-header p {
+  margin: 0;
+  color: #66806a;
+  font-size: 16px;
+}
+
+.history-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 25px;
+  margin-bottom: 24px;
+  background: linear-gradient(120deg, #e1f4df, #f0f8e8);
+  border: 1px solid #d2e8ce;
+  border-radius: 20px;
+}
+
+.history-banner h2 {
+  margin: 0 0 9px;
+  color: #216b3a;
+  font-size: 23px;
+}
+
+.history-banner p {
+  margin: 0;
+  line-height: 1.6;
+  color: #59745e;
+}
+
+.history-count {
+  min-width: 105px;
+  padding: 15px;
+  text-align: center;
+  background: #fff;
+  border: 1px solid #d6e9d3;
+  border-radius: 16px;
+}
+
+.history-count span {
+  display: block;
+  color: #216b3a;
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.history-count small {
+  color: #66806a;
+  font-size: 12px;
+}
+
+.history-search {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 16px 18px;
+  margin: 0 0 25px;
+  border: 1px solid #cfe2cd;
+  border-radius: 14px;
+  background: #fff;
+  color: #294a32;
+  font-size: 16px;
+  outline: none;
+}
+
+.history-search:focus {
+  border-color: #5b9c65;
+  box-shadow: 0 0 0 3px #dff0dc;
+}
+
+.history-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.history-card {
+  min-width: 0;
+  padding: 23px;
+  background: #fff;
+  border: 1px solid #dcebd9;
+  border-radius: 20px;
+  box-shadow: 0 5px 16px rgba(43, 91, 48, 0.06);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.history-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 9px 22px rgba(43, 91, 48, 0.1);
+}
+
+.history-card-top {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 22px;
+}
+
+.history-plant-icon {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: 54px;
+  height: 54px;
+  border-radius: 16px;
+  background: #e9f6e5;
+  font-size: 27px;
+}
+
+.history-diagnosis {
+  min-width: 0;
+}
+
+.history-diagnosis h3 {
+  margin: 0 0 7px;
+  color: #216b3a;
+  font-size: 19px;
+  overflow-wrap: anywhere;
+  text-transform: capitalize;
+}
+
+.history-diagnosis p {
+  margin: 0;
+  color: #819184;
+  font-size: 13px;
+}
+
+.history-details {
+  display: grid;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.history-detail {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 13px;
+  background: #f5faf3;
+  border-radius: 12px;
+  font-size: 14px;
+}
+
+.history-detail span {
+  color: #66806a;
+}
+
+.history-detail strong {
+  color: #315a38;
+  text-align: right;
+  overflow-wrap: anywhere;
+}
+
+.history-delete-one,
+.history-delete-all,
+.history-back {
+  padding: 12px 17px;
+  border: none;
+  border-radius: 11px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.history-delete-one {
+  width: 100%;
+  color: #b52f36;
+  background: #fff0ef;
+  border: 1px solid #f4d5d3;
+}
+
+.history-delete-one:hover {
+  background: #ffe3e1;
+}
+
+.history-empty {
+  padding: 48px 20px;
+  text-align: center;
+  background: #fff;
+  border: 1px dashed #c9dfc6;
+  border-radius: 20px;
+}
+
+.history-empty span {
+  font-size: 46px;
+}
+
+.history-empty h2 {
+  color: #216b3a;
+  font-size: 23px;
+}
+
+.history-empty p {
+  color: #718574;
+  line-height: 1.6;
+}
+
+.history-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 25px;
+}
+
+.history-delete-all {
+  color: #fff;
+  background: #c74747;
+}
+
+.history-delete-all:hover:not(:disabled) {
+  background: #a82f36;
+}
+
+.history-delete-all:disabled {
+  background: #aab2aa;
+  cursor: not-allowed;
+}
+
+.history-back {
+  color: #fff;
+  background: #287743;
+}
+
+.history-back:hover {
+  background: #1d6034;
+}
+
+.history-footer {
+  margin: 30px 0 0;
+  padding-top: 20px;
+  border-top: 1px solid #deebdc;
+  text-align: center;
+  color: #7a917b;
+  font-size: 13px;
+}
+
+.history-delete-one:hover,
+.history-delete-all:hover:not(:disabled),
+.history-back:hover {
+  transform: translateY(-1px);
+}
+
+@media (max-width: 700px) {
+  .history-page {
+    width: calc(100% - 20px);
+    margin: 15px auto;
+    padding: 16px;
+    border-radius: 18px;
+  }
+
+  .history-banner {
+    align-items: flex-start;
+    padding: 18px;
+  }
+
+  .history-banner h2 {
+    font-size: 19px;
+  }
+
+  .history-count {
+    min-width: 65px;
+    padding: 10px;
+  }
+
+  .history-list {
+    grid-template-columns: 1fr;
+  }
+
+  .history-actions {
+    flex-direction: column;
+  }
+
+  .history-delete-all,
+  .history-back {
+    width: 100%;
+  }
+}
