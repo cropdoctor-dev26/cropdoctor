@@ -61,8 +61,12 @@ create_database()
 app = FastAPI()
 
 app.add_middleware(
-    CORSMiddleware,
-    allow_origins=["http://localhost:5173","http://localhost:4173","http://localhost:4174",],
+    CORSMiddleware, allow_origins=[
+    "http://localhost:5173",
+    "http://localhost:4173",
+    "http://localhost:4174",
+    "https://YOUR-ACTUAL-CROPDOCTOR-URL.vercel.app",
+],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
