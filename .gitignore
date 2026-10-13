@@ -41,3 +41,31 @@ venv/
 backend/training/*.keras
 backend/training/*.h5
 backend/training/processed_data/
+# PlantVillage dataset
+backend/PlantVillage_full_organized/
+# Local crop datasets
+backend/dataset/
+backend/PlantVillage_full_organized/
+backend/PlantVillage_organized/
+
+# Local database
+*.db
+*.sqlite
+*.sqlite3
+
+# Trained models
+*.keras
+!backend/training/cropdoctor_model.keras
+*.h5
+
+# Python cache
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Environment secrets
+.env
+.env.*
+backend/training/*.png
+backend/main.py.txt
