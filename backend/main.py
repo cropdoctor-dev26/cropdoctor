@@ -67,6 +67,7 @@ app.add_middleware(
         "http://localhost:4174",
         "https://cropdoctor-git-main-cropdoctor-team.vercel.app",
         "https://cropdoctor-4jfn0wymd-cropdoctor-team.vercel.app",
+        "https://cropdoctor-one.vercel.app",
     ],
     allow_credentials=False,
     allow_methods=["*"],
