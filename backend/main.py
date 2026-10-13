@@ -59,18 +59,22 @@ def create_database():
 create_database()
 
 app = FastAPI()
-
+ 
+ 
 app.add_middleware(
-    CORSMiddleware, allow_origins=[
-    "http://localhost:5173", 
-    "http://localhost:4173",
-    "http://localhost:4174", 
-    "https://cropdoctor-4jfn0wymd-cropdoctor-team.vercel.app"
-],
-    allow_credentials=True,
+    CORSMiddleware,
+    allow_origins=[
+        "http://localhost:5173",
+        "http://localhost:4173",
+        "http://localhost:4174",
+        "https://cropdoctor-git-main-cropdoctor-team.vercel.app",
+        "https://cropdoctor-4jfn0wymd-cropdoctor-team.vercel.app",
+    ],
+    allow_credentials=False,
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
 
 @app.get("/")
 def home():
